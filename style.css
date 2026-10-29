@@ -1,0 +1,178 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f6f2;
+    color: #26312a;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 7%;
+    background: white;
+}
+
+header h1, h2 {
+    color: #284522;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #284522;
+}
+
+.bienvenida {
+    padding: 45px 8%;
+    text-align: center;
+    background: #eaf1e2;
+}
+
+.boton {
+    display: inline-block;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    background: #b7dc77;
+    color: #284522;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.seccion {
+    width: 86%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #dce2d9;
+    text-align: left;
+}
+
+th {
+    background: #eaf1e2;
+}
+
+form {
+    padding: 20px;
+    background: white;
+    border: 1px solid #dce2d9;
+    border-radius: 6px;
+}
+
+.campos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.planes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.planes article {
+    padding: 15px;
+    background: white;
+    border: 1px solid #dce2d9;
+    border-radius: 6px;
+}
+
+.nota {
+    font-size: 13px;
+    color: #68736c;
+}
+
+.contacto {
+    padding: 25px 7%;
+    background: #e9e9e9;
+}
+
+footer {
+    padding: 12px;
+    background: #284522;
+    color: white;
+    text-align: center;
+}
+
+/* Tabletas */
+@media (max-width: 800px) {
+    header {
+        flex-direction: column;
+    }
+
+    .seccion {
+        width: 90%;
+    }
+
+    .planes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Celulares */
+@media (max-width: 560px) {
+    .campos, .planes {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    .bienvenida {
+        padding: 30px 5%;
+    }
+
+    th, td {
+        padding: 6px;
+        font-size: 13px;
+    }
+}
+
+/* Pantallas pequeñas */
+@media (max-width: 360px) {
+    nav {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 23px;
+    }
+}

@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitCenter - Gimnasio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>FitCenter</h1>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#socios">Socios</a>
+        <a href="#registro">Registro</a>
+        <a href="#planes">Planes</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<main>
+    <section id="inicio" class="bienvenida">
+        <h2>Sistema de Gestión y Control para Gimnasio</h2>
+        <p>Administra los socios y consulta los planes del gimnasio.</p>
+        <a href="#registro" class="boton">Registrar socio</a>
+    </section>
+
+    <section id="socios" class="seccion">
+        <h2>Socios registrados</h2>
+        <table>
+            <tr><th>Nombre</th><th>Documento</th><th>Plan</th></tr>
+            <tr><td>Laura Martínez</td><td>1001234567</td><td>Premium</td></tr>
+            <tr><td>Juan Rodríguez</td><td>1002345678</td><td>Mensual</td></tr>
+            <tr><td>Camila Pérez</td><td>1003456789</td><td>Estándar</td></tr>
+        </table>
+    </section>
+
+    <section id="registro" class="seccion">
+        <h2>Registrar socio</h2>
+        <form action="#registro" method="get">
+            <div class="campos">
+                <label>Nombre:
+                    <input type="text" name="nombre" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{3,80}" required>
+                </label>
+
+                <label>Documento:
+                    <input type="text" name="documento" pattern="[0-9]{6,12}" required>
+                </label>
+
+                <label>Correo:
+                    <input type="email" name="correo" required>
+                </label>
+
+                <label>Teléfono:
+                    <input type="tel" name="telefono" pattern="[0-9 +()-]{7,18}" required>
+                </label>
+
+                <label>Fecha de inicio:
+                    <input type="date" name="fecha" required>
+                </label>
+
+                <label>Plan:
+                    <select name="plan" required>
+                        <option value="">Seleccionar</option>
+                        <option>Mensual</option>
+                        <option>Estándar</option>
+                        <option>Premium</option>
+                    </select>
+                </label>
+            </div>
+            <button class="boton" type="submit">Registrar</button>
+            <p class="nota">Formulario de ejemplo; aún no guarda datos.</p>
+        </form>
+    </section>
+
+    <section id="planes" class="seccion">
+        <h2>Planes del gimnasio</h2>
+        <div class="planes">
+            <article>
+                <h3>Mensual</h3>
+                <p>$80.000 / mes</p>
+            </article>
+            <article>
+                <h3>Estándar</h3>
+                <p>$120.000 / mes</p>
+            </article>
+            <article>
+                <h3>Premium</h3>
+                <p>$160.000 / mes</p>
+            </article>
+        </div>
+    </section>
+
+    <aside id="contacto" class="contacto">
+        <h2>Contacto</h2>
+        <p>Sahagun: <a href="tel:+576047862396">(604) 786 2396</a></p>
+        <p>Correo: contacto@fitcenter.example</p>
+    </aside>
+</main>
+
+<footer>
+    <p>&copy; 2026 FitCenter - Proyecto académico.</p>
+</footer>
+
+</body>
+</html>
