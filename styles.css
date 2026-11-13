@@ -1,305 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap');
+:root{--bg:#111;--panel:#1b1b1b;--orange:#ff6b24;--white:#f5f5f5;--muted:#a8a8a8;--line:#303030}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--white);line-height:1.6}a{text-decoration:none;color:inherit}.container{width:min(1120px,90%);margin:auto}
+.header{position:sticky;top:0;z-index:10;background:rgba(17,17,17,.96);border-bottom:1px solid var(--line)}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.logo{font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:800;letter-spacing:-1px}.logo span{color:var(--orange)}.logo .dot{color:var(--white)}nav{display:flex;gap:28px}nav a{color:var(--muted);font-weight:600}nav a:hover{color:var(--orange)}.nav-button{background:var(--orange);color:#111;padding:10px 18px;border-radius:4px;font-weight:700}
+.hero{padding:90px 0;background:radial-gradient(circle at 80% 45%,#292019 0,transparent 35%)}.hero-content
+{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:55px}.eyebrow{color:var(--orange);font-size:.78rem;font-weight:800;letter-spacing:2px;margin-bottom:14px}h1,h2{font-family:'Barlow Condensed',sans-serif;line-height:1.05;font-weight:800}h1{font-size:clamp(2.8rem,6vw,5rem)}h1 span,.section-heading h2 span,.registration-info h2 span{color:var(--orange)}.hero-description{max-width:520px;margin:22px 0 28px;color:var(--muted);font-size:1.05rem}.hero-actions{display:flex;gap:14px;flex-wrap:wrap}.button{display:inline-block;padding:12px 22px;border-radius:4px;font-weight:700;text-align:center;border:1px solid var(--orange);cursor:pointer;font:inherit}.button-orange{background:var(--orange);color:#111}.button-outline{color:var(--white);background:transparent}.button-full{width:100%}.button:hover{transform:translateY(-2px)}.hero-card{min-height:370px;padding:18px;border:1px solid #49301f;background:linear-gradient(145deg,#2a211b,#171717 65%);display:flex;align-items:end}.hero-card-inner{width:100%}.card-label{color:var(--orange);font-weight:800;letter-spacing:2px;font-size:.75rem}.big-number{font-family:'Barlow Condensed',sans-serif;font-size:8rem;line-height:1;font-weight:800;color:rgba(255,107,36,.18)}
+.hero-card h2{font-size:2.4rem;margin-top:-15px}.hero-card p{color:var(--muted);margin-top:10px}
+.section{padding:82px 0}.section-heading{text-align:center;max-width:650px;margin:0 auto 42px}.section-heading h2{font-size:3rem;margin-bottom:12px}.section-heading>p:last-child{color:var(--muted)}.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.service-card{padding:30px;background:var(--panel);border:1px solid var(--line);border-radius:6px}.service-icon{color:var(--orange);font-size:2rem;margin-bottom:14px}.service-card h3{font-size:1.25rem;margin-bottom:8px}.service-card p{color:var(--muted)}
+.plans-section{background:#171717}.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}.plan-card{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:30px}.plan-card.featured{border-color:var(--orange)}.popular{display:inline-block;background:var(--orange);color:#111;font-size:.7rem;font-weight:800;padding:4px 10px;border-radius:3px;margin-bottom:12px}.plan-name{color:var(--orange);font-weight:800;letter-spacing:1.5px}.plan-card h3{font-size:2rem;margin:8px 0 20px}.plan-card h3 small{font-size:.9rem;color:var(--muted);font-weight:500}.plan-card ul{list-style:none;margin-bottom:25px}.plan-card li{color:var(--muted);padding:8px 0;border-bottom:1px solid var(--line)}.plan-card li::before{content:'✓ ';color:var(--orange);font-weight:800}.note{color:var(--muted);font-size:.8rem;margin-top:20px}
+.registration-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;align-items:start}.registration-info h2{font-size:4rem}.registration-info>p:not(.eyebrow){color:var(--muted);margin:20px 0}.info-line{margin-top:14px;font-weight:600}.info-line span{color:var(--orange);margin-right:8px}.registration-form{padding:32px;background:var(--panel);border:1px solid var(--line);border-radius:6px}.registration-form h3{font-size:1.5rem;margin-bottom:22px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.form-group{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}label{font-weight:600;font-size:.9rem}input,select,textarea{width:100%;padding:12px;background:#111;border:1px solid #3a3a3a;border-radius:4px;color:var(--white);font:inherit}input:focus,select:focus,textarea:focus{outline:1px solid var(--orange);border-color:var(--orange)}textarea{resize:vertical}.check-label{display:flex;align-items:center;gap:10px;color:var(--muted);margin:4px 0 20px}.check-label input{width:auto;accent-color:var(--orange)}.form-note{color:var(--muted);font-size:.78rem;margin-top:14px}.footer{border-top:1px solid var(--line);padding:28px 0}.footer-content{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer p{color:var(--muted);font-size:.9rem}.copyright{font-size:.8rem!important}
+/* Breakpoint 1: tabletas */
+@media(max-width:900px){.hero-content,.registration-layout{grid-template-columns:1fr}.hero-card{min-height:280px}.services-grid,.plans-grid{grid-template-columns:repeat(2,1fr)}.plan-card:last-child{grid-column:1/-1}.registration-info h2{font-size:3.4rem}}
+/* Breakpoint 2: celulares */
+@media(max-width:600px){.nav{flex-wrap:wrap;padding:14px 0}nav{order:3;width:100%;justify-content:space-between;gap:10px}nav a{font-size:.85rem}.nav-button{padding:8px 12px;font-size:.9rem}.hero{padding:60px 0}.hero-content{gap:35px}.hero-card{min-height:230px}.big-number{font-size:6rem}.section{padding:60px 0}.section-heading h2{font-size:2.5rem}.services-grid,.plans-grid,.form-grid{grid-template-columns:1fr}.plan-card:last-child{grid-column:auto}.registration-form{padding:22px}}
+/* Breakpoint 3: celulares pequeños */
 
-/* ESTILOS GENERALES */
+@media(max-width:380px){.logo{font-size:1.5rem}nav a{font-size:.75rem}h1{font-size:2.5rem}.hero-actions .button{width:100%}.registration-info h2{font-size:2.8rem}}
 
-* {
-    box-sizing: border-box;
+/* ==========================================
+   AVANCE 2 - ESTILOS ADICIONALES
+========================================== */
+
+/* Sección de motivación y API */
+
+.motivation-section {
+    background: #171717;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f6f2;
-    color: #26312a;
-    line-height: 1.6;
-}
-
-h2 {
-    color: #284522;
-}
-
-a {
-    color: inherit;
-}
-
-/* ENCABEZADO Y NAVEGACIÓN */
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    padding: 20px 7%;
-    background-color: white;
-    border-bottom: 1px solid #dce2d9;
-}
-
-header h1 {
-    margin: 0;
-    color: #284522;
-}
-
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-}
-
-nav a {
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #719b36;
-}
-
-/* INICIO */
-
-.bienvenida {
-    padding: 60px 8%;
-    text-align: center;
-    background-color: #eaf1e2;
-}
-
-.bienvenida h2 {
-    font-size: 32px;
-}
-
-.bienvenida p {
-    max-width: 650px;
-    margin: 15px auto 25px;
-}
-
-/* BOTONES */
-
-.boton {
-    display: inline-block;
-    padding: 11px 18px;
-    border: none;
-    border-radius: 5px;
-    background-color: #b7dc77;
-    color: #284522;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.boton:hover {
-    background-color: #a8d45d;
-}
-
-/* SECCIONES */
-
-.seccion {
-    width: 86%;
-    max-width: 1000px;
-    margin: auto;
-    padding: 40px 0;
-}
-
-/* TABLA DE SOCIOS */
-
-.tabla-contenedor {
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-}
-
-th,
-td {
-    padding: 12px;
-    border: 1px solid #dce2d9;
-    text-align: left;
-}
-
-th {
-    background-color: #eaf1e2;
-}
-
-/* FORMULARIO */
-
-form {
-    padding: 25px;
-    border: 1px solid #dce2d9;
-    border-radius: 8px;
-    background-color: white;
-}
-
-.campos {
+.quotes-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-    margin-bottom: 22px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
 }
 
-.campo {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.campo label {
-    font-weight: bold;
-}
-
-.campo input,
-.campo select {
-    width: 100%;
-    min-height: 42px;
-    padding: 9px;
-    border: 1px solid #cbd4c8;
+.quote-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--orange);
+    padding: 25px;
     border-radius: 5px;
-    background-color: white;
+}
+
+.quote-card p {
+    color: var(--white);
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+}
+
+.quote-card h4 {
+    color: var(--orange);
+}
+
+.api-message {
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#reload-quotes:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+/* Validaciones */
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+    border: 1px solid #ff4444;
+}
+
+input.valid,
+select.valid,
+textarea.valid {
+    border: 1px solid #36b76b;
+}
+
+.error-message {
+    color: #ff6666;
+    font-size: .8rem;
+}
+
+/* Listado de inscritos */
+
+.registrations-section {
+    grid-column: 1 / -1;
+    margin-top: 25px;
+    padding: 28px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+}
+
+.registrations-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.list-description,
+#registration-count {
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+
+#registration-count {
+    color: var(--orange);
+    font-weight: 700;
+}
+
+.registration-card {
+    padding: 20px;
+    margin-bottom: 15px;
+    background: #111;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+}
+
+.registration-card h4 {
+    color: var(--orange);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.registration-card p {
+    color: var(--muted);
+    margin-bottom: 5px;
+}
+
+.registration-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.action-button {
+    padding: 8px 15px;
+    border: 1px solid var(--orange);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--white);
+    cursor: pointer;
     font: inherit;
 }
 
-.campo input:focus,
-.campo select:focus {
-    outline: 2px solid #b7dc77;
+.edit-button:hover {
+    background: var(--orange);
+    color: #111;
 }
 
-.nota {
-    color: #68736c;
-    font-size: 14px;
+.delete-button {
+    border-color: #e04444;
 }
 
-/* PLANES: CSS GRID */
-
-.planes {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
-    margin-top: 20px;
+.delete-button:hover {
+    background: #e04444;
 }
 
-.plan {
-    padding: 22px;
-    border: 1px solid #dce2d9;
-    border-radius: 8px;
-    background-color: white;
+.empty-message {
+    color: var(--muted);
+    padding: 15px 0;
 }
 
-.plan h3 {
-    color: #284522;
-}
+/* Responsive adicional */
 
-.precio {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/* CONTACTO */
-
-.contacto {
-    padding: 30px 7%;
-    background-color: #e9e9e9;
-}
-
-.contacto h2 {
-    margin-top: 0;
-    color: #52616a;
-}
-
-.contacto p {
-    margin: 8px 0;
-}
-
-.contacto a {
-    color: #37434b;
-}
-
-/* PIE DE PÁGINA */
-
-footer {
-    padding: 15px;
-    background-color: #284522;
-    color: white;
-    text-align: center;
-}
-
-/* RESPONSIVE PARA TABLETAS */
-
-@media (max-width: 800px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .planes {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .seccion {
-        width: 90%;
-    }
-}
-
-/* RESPONSIVE PARA CELULARES */
-
-@media (max-width: 560px) {
-    header {
-        padding: 18px 5%;
-    }
-
-    nav {
-        gap: 10px 15px;
-    }
-
-    .bienvenida {
-        padding: 40px 6%;
-    }
-
-    .bienvenida h2 {
-        font-size: 25px;
-    }
-
-    .seccion {
-        width: 90%;
-        padding: 30px 0;
-    }
-
-    .campos,
-    .planes {
+@media(max-width: 600px) {
+    .quotes-grid {
         grid-template-columns: 1fr;
     }
 
-    form {
-        padding: 18px;
+    .registrations-section {
+        padding: 20px;
     }
 
-    th,
-    td {
-        padding: 9px;
-        font-size: 14px;
-    }
-
-    .contacto {
-        padding: 25px 5%;
-    }
-}
-
-/* RESPONSIVE PARA PANTALLAS MUY PEQUEÑAS */
-
-@media (max-width: 360px) {
-    header h1 {
-        font-size: 24px;
-    }
-
-    nav {
-        flex-direction: column;
-        gap: 7px;
-    }
-
-    .bienvenida h2 {
-        font-size: 22px;
+    .registration-actions {
+        flex-wrap: wrap;
     }
 }
